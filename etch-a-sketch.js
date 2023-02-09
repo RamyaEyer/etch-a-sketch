@@ -9,11 +9,12 @@ for(i = 0 ; i < rowNum * colNum ; i++ ){
     div.style.height = "20px";
     div.style.width = "20px";
     div.style.background = "black";
+    container.style.gridTemplateRows = "repeat(16, 1fr)";  //Figure out why this doesn't like variables
+    container.style.gridTemplateColumns = "repeat(16, 1fr)";
+    //Increasing margins forces everything together, more needs to be understood about gridTemplateRows and repeat
     container.appendChild(div);
     
 }
 
-container.style.gridTemplateRows = "repeat(${rowNum}, 1fr)";
-container.style.gridTemplateColumns = "repeat(${colNum}, 1fr)";
 
 
