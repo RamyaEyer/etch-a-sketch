@@ -1,17 +1,37 @@
-.container{
 
-    display: grid;
-    height: "500px";
-    width: "500px";
-    margin-left: 50%;
-    margin-right: 50%;
+
+.title{
+
+    text-align: center;
 
 }
 
+.sketchpad{
+
+    display: grid;
+    min-height: 90vh;
+    height: 90vh;
+    min-width: 90vh;
+    width: 90vh;
+    padding-top: 1vh;
+    margin-left: auto;
+    margin-right: auto;
+   
+
+}
+
+/*Note: Default border-style: none; */
+
 .square{
 
-    height: "20px";
-    width: "20px";
-    background: "black";
+    border-width: 1px;
+    border-color: red;
+    border-style: solid; 
+    background-color: black;
+
+}
+.square:hover{
+
+    background-color: green;
 
 }
