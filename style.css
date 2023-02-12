@@ -4,6 +4,7 @@
 
     text-align: center;
 
+
 }
 
 .sketchpad{
@@ -27,11 +28,11 @@
     border-width: 1px;
     border-color: red;
     border-style: solid; 
-    background-color: black;
+    background-color:black;
 
 }
-.square:hover{
+/*.square:hover{
 
-    background-color: green;
+    background-color: purple;
 
-}
+}*/
