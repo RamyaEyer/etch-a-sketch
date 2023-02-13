@@ -4,7 +4,7 @@ let colNum = 16;
 // div.addEventListener("mouseover", function(){div.style.backgroundColor = "red";}); correct syntax
 function letDraw(square){
 
-    //square.style.backgroundColor = "red";
+    square.style.backgroundColor = "red";
     
 }
 
@@ -26,10 +26,8 @@ function addGrid(rowNum, colNum){
 
 addGrid(rowNum, colNum);
 
-document.querySelectorAll(".sketchpad").forEach(square => letDraw());
+document.querySelectorAll(".square").forEach(square =>  square.addEventListener("mouseover", function() {letDraw(square)}));
 
-/*forEach(square => square.addEventListener("mouseover", function() {letDraw(square)}));*/
-//for each loop for Event Listeners
 
 
 
