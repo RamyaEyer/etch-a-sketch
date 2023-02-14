@@ -65,11 +65,15 @@ function resetGrid(){
 
 }
 
+/*Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for drawing in random colours.*/
+
 function randomColor(){
 
     document.querySelectorAll(".square").forEach(square =>  square.addEventListener("mouseover", function() {letDrawColor(square)}));
     
 }
+
+/*Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for default drawing to be possible.*/
 
 function black(){
 
@@ -77,6 +81,7 @@ function black(){
 
 }
 
+/*Randomly generate a colour by choosing random numbers between 0-255 and parsing as a string to be converted as a colour to appear.*/
 
 function letDrawColor(square){
 
@@ -93,10 +98,7 @@ function letDrawColor(square){
 
 addGrid(rowNum, colNum);
 
-
-/*Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for drawing to be possible.*/
-
-document.querySelectorAll(".square").forEach(square =>  square.addEventListener("mouseover", function() {letDrawBlack(square)}));
+black();
 
 
 

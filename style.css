@@ -3,7 +3,8 @@
 .title{
 
     text-align: center;
-
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: larger;
 
 }
 
@@ -54,7 +55,13 @@ Note: Default border-style: none; */
     width: 70vh;
     margin-left: auto;
     margin-right: auto;
-   
 
 }
 
+/*Changes font on buttons to Comic sans*/
+
+#reset, #classic, #randomColor{
+
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+
+}
