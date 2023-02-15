@@ -1,7 +1,6 @@
-let rowNum = 16;
-let colNum = 16;
+sliderNum = 16;
 
-/*letDraw(square)
+/* letDrawBlack(square)
 
     Makes individual squares from grid be able to change colour to black.
 
@@ -26,31 +25,29 @@ function returnToStart(square){
 
 }
 
-/*addGrid(rowNum, colNum)
+/* addGrid(sliderNum)
 
-Parses number of rows and columns requested to form grid with specified dimensions.
+Parses number on slider chosen to form grid with specified dimensions.
 
 */
 
-function addGrid(rowNum, colNum){
+function addGrid(sliderNum){
 
     const container = document.querySelector(".sketchpad");
 
-    for(i = 0 ; i < rowNum * colNum ; i++ ){
+    for(i = 0 ; i < sliderNum * sliderNum ; i++ ){
 
         var div = document.createElement("div");    
         div.className = "square";
-        container.style.gridTemplateRows = "repeat(" + rowNum + ", 1fr)";  
-        container.style.gridTemplateColumns = "repeat("+ colNum + ", 1fr)";
+        container.style.gridTemplateRows = "repeat(" + sliderNum + ", 1fr)";  
+        container.style.gridTemplateColumns = "repeat("+ sliderNum + ", 1fr)";
         container.appendChild(div);
         
     }
 
 }
 
-/*
-
-resetGrid() 
+/* resetGrid() 
 
 Prompted by button to reset
 Sets all squares in Etch-a-sketch to default colour
@@ -65,7 +62,7 @@ function resetGrid(){
 
 }
 
-/*Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for drawing in random colours.*/
+/* Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for drawing in random colours.*/
 
 function randomColor(){
 
@@ -73,7 +70,7 @@ function randomColor(){
     
 }
 
-/*Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for default drawing to be possible.*/
+/* Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for default drawing to be possible.*/
 
 function black(){
 
@@ -81,7 +78,7 @@ function black(){
 
 }
 
-/*Randomly generate a colour by choosing random numbers between 0-255 and parsing as a string to be converted as a colour to appear.*/
+/* Randomly generate a colour by choosing random numbers between 0-255 and parsing as a string to be converted as a colour to appear.*/
 
 function letDrawColor(square){
 
@@ -92,18 +89,21 @@ function letDrawColor(square){
     color = "rgb("+ cnum1 +", "+ cnum2 +", "+ cnum3+")";
 
     square.style.backgroundColor = color;
+
 }
 
-/*Functions are in order of call.*/
+/* Generates Default Etch-a-Sketch Grid */
 
-addGrid(rowNum, colNum);
+addGrid(sliderNum);
 
 black();
 
+function numSlider(){
 
+    document.getElementById("slider").value = sliderNum;
+    alert(document.getElementById("slider").value);
 
+}
 
-
-
-
+numSlider();
 
