@@ -1,4 +1,4 @@
-sliderNum = 16;
+let sliderNum = 16;
 
 /* letDrawBlack(square)
 
@@ -33,7 +33,7 @@ Parses number on slider chosen to form grid with specified dimensions.
 
 function addGrid(sliderNum){
 
-    const container = document.querySelector(".sketchpad");
+    container = document.querySelector(".sketchpad");
 
     for(i = 0 ; i < sliderNum * sliderNum ; i++ ){
 
@@ -92,18 +92,29 @@ function letDrawColor(square){
 
 }
 
-/* Generates Default Etch-a-Sketch Grid */
 
-addGrid(sliderNum);
 
-black();
+function displayGridValue(x){
 
-function numSlider(){
+    document.getElementById("sliderVal").innerHTML=x;
 
-    document.getElementById("slider").value = sliderNum;
-    alert(document.getElementById("slider").value);
+    sliderNum = x;
+
+    initSlider(sliderNum);
 
 }
 
-numSlider();
 
+
+function initSlider(sliderNum){
+
+    addGrid(sliderNum);
+
+    black();
+
+}
+
+
+/* Generates Etch-a-Sketch Grid */
+
+initSlider(sliderNum);
