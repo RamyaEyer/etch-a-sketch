@@ -103,6 +103,12 @@ function letDrawColor(square){
 
 }
 
+/* removeGrid()
+
+Removes Grid before creating adding grid with new dimensions in the slider.
+
+*/
+
 function removeGrid(){
 
     document.querySelector(".sketchpad").innerHTML="";
