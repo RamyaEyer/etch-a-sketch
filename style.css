@@ -18,7 +18,8 @@
     padding-top: 1vh;
     margin-left: auto;
     margin-right: auto;
-
+    box-sizing: border-box;
+   
 }
 
 /*Individual square for etch-a-sketch.
@@ -31,7 +32,10 @@ Note: Default border-style: none; */
     border-color: grey;
     border-style: solid; 
     background-color:whitesmoke;
-
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    
 }
 
 .rangeSlider{

@@ -14,7 +14,7 @@ function letDrawBlack(square){
 
 /* returnToStart(square)
 
- Return squares to start colour (Whitesmoke)
+ Return squares to start colour (Whitesmoke) on reset.
 
 
 */
@@ -25,6 +25,7 @@ function returnToStart(square){
 
 }
 
+
 /* addGrid(sliderNum)
 
 Parses number on slider chosen to form grid with specified dimensions.
@@ -33,12 +34,14 @@ Parses number on slider chosen to form grid with specified dimensions.
 
 function addGrid(sliderNum){
 
+    removeGrid();
+
     container = document.querySelector(".sketchpad");
 
     for(i = 0 ; i < sliderNum * sliderNum ; i++ ){
 
         var div = document.createElement("div");    
-        div.className = "square";
+        div.className = "square ${i}";
         container.style.gridTemplateRows = "repeat(" + sliderNum + ", 1fr)";  
         container.style.gridTemplateColumns = "repeat("+ sliderNum + ", 1fr)";
         container.appendChild(div);
@@ -62,7 +65,11 @@ function resetGrid(){
 
 }
 
-/* Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for drawing in random colours.*/
+/* randomColor()
+
+Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for drawing in random colours.
+
+*/
 
 function randomColor(){
 
@@ -70,7 +77,11 @@ function randomColor(){
     
 }
 
-/* Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for default drawing to be possible.*/
+/* black()
+
+Takes each square from etch-a-sketch grid and assigns an Event Listener for all of them allowing for default drawing to be possible.
+
+*/
 
 function black(){
 
@@ -92,6 +103,19 @@ function letDrawColor(square){
 
 }
 
+function removeGrid(){
+
+    document.querySelector(".sketchpad").innerHTML="";
+    
+}
+
+
+
+
+/*displayGridValue(x)
+
+
+Displays value on grid and creates new grid. */
 
 
 function displayGridValue(x){
@@ -100,14 +124,18 @@ function displayGridValue(x){
 
     sliderNum = x;
 
-    initSlider(sliderNum);
+    initGrid(sliderNum);
 
 }
 
+/*initGrid(sliderNum)
 
 
-function initSlider(sliderNum){
+Initiates Creation of Grid once number is determined on slider. */
 
+
+function initGrid(sliderNum){
+  
     addGrid(sliderNum);
 
     black();
@@ -115,6 +143,6 @@ function initSlider(sliderNum){
 }
 
 
-/* Generates Etch-a-Sketch Grid */
+/* Function Call Generates Etch-a-Sketch Grid */
 
-initSlider(sliderNum);
+initGrid(sliderNum);
